@@ -16,18 +16,18 @@ function binarySearch(id, array) {
   let min = 0;
   let max = array.length - 1;
   let index;
-  let element;
+  let midElement;
 
   while (min <= max) {
     index = Math.floor((min + max) / 2);
-    element = array[index];
+    midElement = array[index];
 
-    if (element.id < id) {
+    if (id > midElement.id) {
       min = index + 1;
-    } else if (element.id > id) {
+    } else if (id < midElement.id) {
       max = index - 1;
     } else {
-      return element;
+      return midElement;
     }
   }
 
