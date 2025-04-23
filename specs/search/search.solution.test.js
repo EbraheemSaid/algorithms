@@ -53,7 +53,7 @@ test("linear search", function () {
       { id: 2, name: "Marc" },
       { id: 51, name: "Chris" },
       lookingFor,
-      { id: 14, name: "Ben" }
+      { id: 14, name: "Ben" },
     ])
   ).toBe(lookingFor);
 });
@@ -75,7 +75,7 @@ test("binary search", function () {
       { id: 19, name: "Marc" },
       { id: 21, name: "Chris" },
       lookingFor,
-      { id: 24, name: "Ben" }
+      { id: 24, name: "Ben" },
     ])
   ).toBe(lookingFor);
 });
