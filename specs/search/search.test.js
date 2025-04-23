@@ -13,7 +13,7 @@ function linearSearch(id, array) {
   return void 0;
 }
 
-function binarySearch(id, array) {
+function binarySearchRecursive(id, array) {
   if (array.length === 0) return null;
   // code goes here
 
@@ -28,6 +28,26 @@ function binarySearch(id, array) {
   } else {
     const leftArray = array.slice(0, mid);
     return binarySearch(id, leftArray);
+  }
+}
+
+function binarySearch(id, array) {
+  let min = 0;
+  let max = array.length - 1;
+  let mid;
+  let element;
+
+  while (min <= max) {
+    mid = Math.floor((min + max) / 2);
+    element = array[mid];
+
+    if (element.id === id) return element;
+
+    if (element.id > id) {
+      max = mid - 1;
+    } else {
+      min = mid + 1;
+    }
   }
 }
 
