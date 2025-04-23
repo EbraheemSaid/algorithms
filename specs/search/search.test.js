@@ -34,21 +34,23 @@ function binarySearchRecursive(id, array) {
 function binarySearch(id, array) {
   let min = 0;
   let max = array.length - 1;
-  let mid;
-  let element;
+  let index;
+  let midElement;
 
   while (min <= max) {
-    mid = Math.floor((min + max) / 2);
-    element = array[mid];
+    index = Math.floor((min + max) / 2);
+    midElement = array[index];
 
-    if (element.id === id) return element;
-
-    if (element.id > id) {
-      max = mid - 1;
+    if (id > midElement.id) {
+      min = index + 1;
+    } else if (id < midElement.id) {
+      max = index - 1;
     } else {
-      min = mid + 1;
+      return midElement;
     }
   }
+
+  return void 0;
 }
 
 // unit tests
